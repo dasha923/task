@@ -32,48 +32,38 @@ $this->addExternalCss($templateFolder. '/css/common.css');
 
         <div class="contact-form__form-inputs">
             <div class="input contact-form__input">
-                <label class="input__label" for="form_name_<?=$arResult['QUESTIONS']['NAME']['ID']?>">
+                <label class="input__label" for="form_name_1">
                     <div class="input__label-text">Ваше имя*</div>
-                    <input class="input__input" type="text"
-                     id="form_name_<?=$arResult['QUESTIONS']['NAME']['ID']?>" name="form_text_<?=$arResult['QUESTIONS']['NAME']['ID']?>
-                     " value="<?=htmlspecialchars($arResult['arrVALUES']['form_text_' . $arResult['QUESTIONS']['NAME']['ID']])?>" required minlength="3">
+                    <input class="input__input" type="text" id="form_name_1" name="NAME" value="<?=htmlspecialchars($arResult['arrVALUES']['NAME'] ?? '')?>" required minlength="3">
                     <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
                 </label>
             </div>
             <div class="input contact-form__input">
-                <label class="input__label" for="form_company_<?=$arResult['QUESTIONS']['COMPANY']['ID']?>">
+                <label class="input__label" for="form_company_2">
                     <div class="input__label-text">Компания/Должность*</div>
-                    <input class="input__input" type="text" id="form_company_
-                    <?=$arResult['QUESTIONS']['COMPANY']['ID']?>" name="form_text_<?=$arResult['QUESTIONS']['COMPANY']['ID']?>" 
-                    value="<?=htmlspecialchars($arResult['arrVALUES']['form_text_' . $arResult['QUESTIONS']['COMPANY']['ID']])?>" required minlength="3">
+                    <input class="input__input" type="text" id="form_company_2" name="COMPANY" value="<?=htmlspecialchars($arResult['arrVALUES']['COMPANY'] ?? '')?>" required minlength="3">
                     <div class="input__notification">Поле должно содержать не менее 3-х символов</div>
                 </label>
             </div>
             <div class="input contact-form__input">
-                <label class="input__label" for="form_email_<?=$arResult['QUESTIONS']['EMAIL']['ID']?>">
+                <label class="input__label" for="form_email_3">
                     <div class="input__label-text">Email*</div>
-                    <input class="input__input" type="email" id="form_email_
-                    <?=$arResult['QUESTIONS']['EMAIL']['ID']?>" name="form_text_<?=$arResult['QUESTIONS']['EMAIL']['ID']?>" value="
-                    <?=htmlspecialchars($arResult['arrVALUES']['form_text_' . $arResult['QUESTIONS']['EMAIL']['ID']])?>" required>
+                    <input class="input__input" type="email" id="form_email_3" name="EMAIL" value="<?=htmlspecialchars($arResult['arrVALUES']['EMAIL'] ?? '')?>" required>
                     <div class="input__notification">Неверный формат почты</div>
                 </label>
             </div>
             <div class="input contact-form__input">
-                <label class="input__label" for="form_phone_<?=$arResult['QUESTIONS']['PHONE']['ID']?>">
+                <label class="input__label" for="form_phone_4">
                     <div class="input__label-text">Номер телефона*</div>
-                    <input class="input__input" type="tel" id="form_phone_
-                    <?=$arResult['QUESTIONS']['PHONE']['ID']?>" name="form_text_<?=$arResult['QUESTIONS']['PHONE']['ID']?>" 
-                    value="<?=htmlspecialchars($arResult['arrVALUES']['form_text_' . $arResult['QUESTIONS']['PHONE']['ID']])?>" required>
+                    <input class="input__input" type="tel" id="form_phone_4" name="PHONE" value="<?=htmlspecialchars($arResult['arrVALUES']['PHONE'] ?? '')?>" required>
                 </label>
             </div>
         </div>
         <div class="contact-form__form-message">
             <div class="input">
-                <label class="input__label" for="form_message_<?=$arResult['QUESTIONS']['MESSAGE']['ID']?>">
+                <label class="input__label" for="form_message_5">
                     <div class="input__label-text">Сообщение</div>
-                    <textarea class="input__input" id="form_message_
-                    <?=$arResult['QUESTIONS']['MESSAGE']['ID']?>" name="form_textarea_<?=$arResult['QUESTIONS']['MESSAGE']['ID']?>" rows="5">
-                    <?=htmlspecialchars($arResult['arrVALUES']['form_textarea_' . $arResult['QUESTIONS']['MESSAGE']['ID']])?></textarea>
+                    <textarea class="input__input" id="form_message_5" name="MESSAGE" rows="5"><?=htmlspecialchars($arResult['arrVALUES']['MESSAGE'] ?? '')?></textarea>
                     <div class="input__notification"></div>
                 </label>
             </div>
@@ -83,7 +73,7 @@ $this->addExternalCss($templateFolder. '/css/common.css');
                 ознакомлены, полностью согласны и&nbsp;принимаете условия &laquo;Согласия на&nbsp;обработку персональных
                 данных&raquo;.
             </div>
-          <button class="form-button contact-form__bottom-button" type="submit" data-success="Отправлено" data-error="Ошибка отправки">
+          <button class="form-button contact-form__bottom-button" type="submit" name="web_form_submit" value="Y" data-success="Отправлено" data-error="Ошибка отправки">
                 <div class="form-button__title">Оставить заявку</div>
             </button>
         </div>
@@ -91,6 +81,7 @@ $this->addExternalCss($templateFolder. '/css/common.css');
 <?endif;?>
 </div>
 
+<!-- Стили остаются без изменений -->
 <style>
 .contact-form__bottom {
     display: flex;
